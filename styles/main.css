@@ -2,7 +2,7 @@
 
               /*Hide the Second User Screen elements on page load*/
 
- #canvas{
+ #go-button, #canvas{
 	display:none;
 }
               /*Loading Screen Styling*/

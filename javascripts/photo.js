@@ -87,12 +87,16 @@ window.fbAsyncInit = function() {
 }(document, 'script', 'facebook-jssdk'));
 
 $("#go-button").click(function() {
+  startApp();
+});
+
+function startApp() {
   var test = getAlbums(
     function(model) {
       console.log(model);
       getPhoto(model);
     });
-});
+}
 
 
 // Here we run a very simple test of the Graph API after login is
