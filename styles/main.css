@@ -2,11 +2,10 @@
 
               /*Hide the Second User Screen elements on page load*/
 
- #go-button, #canvas{
+ #go-button, #canvas {
 	display:none;
 }
               /*Loading Screen Styling*/
-
 
 .spinner {
   margin: 100px auto;
