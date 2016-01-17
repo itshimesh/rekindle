@@ -6,6 +6,8 @@
 	display:none;
 }
               /*Loading Screen Styling*/
+
+
 .spinner {
   margin: 100px auto;
   width: 40px;
@@ -56,6 +58,3 @@
   }
 }
 
-/*canvas {
-  margin-left: 100px;
-}*/
