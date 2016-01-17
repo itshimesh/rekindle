@@ -109,11 +109,10 @@ function shuffleArray(o) {
 function onPuzzleClick(e) {
   console.log();
 
+
   if (e.pageX || e.pageX == 0) {
     _mouse.x = e.pageX - _canvas.offsetLeft;
     _mouse.y = e.pageY - _canvas.offsetTop;
-    console.log("How Y is calculated:"+e.screenY+"is the screenY");
-    console.log("How Y is calculated:"+_canvas.offsetTop+"is the offset");
   } else if (e.x || e.x == 0) {
     _mouse.x = e.x - _canvas.offsetLeft;
     _mouse.y = e.y - _canvas.offsetTop;
@@ -138,9 +137,6 @@ function checkPieceClicked() {
     if (_mouse.x < piece.xPos || _mouse.x > (piece.xPos + _pieceWidth) || _mouse.y < piece.yPos || _mouse.y > (piece.yPos + _pieceHeight)) {
       //PIECE NOT HIT
       if (i == 8) {
-        console.log('mouse - x = ' + _mouse.x + 'and y = ' + _mouse.y);
-        console.log('piece - x = ' + piece.xPos + 'and y = ' + piece.yPos);
-        console.log('piece dim - width' + _pieceWidth + 'height' + _pieceHeight);
       }
     } else {
       console.log('HIT! - x = ' + _mouse.x + 'and y = ' + _mouse.y);
@@ -229,6 +225,6 @@ function gameOver() {
   document.onmouseup = null;
 
   $(".cover-heading").text("Congratulations!")
-  $("#main-text").text("You solved the puzzle. Reconnect with");
+  $("#main-text").text("You solved the puzzle. Reconnect with " + photoFriend);
   $("#again,#reconnect").fadeIn();
 }

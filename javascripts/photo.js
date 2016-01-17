@@ -1,5 +1,5 @@
 'use strict';
-var photoURL, messageStr;
+var photoURL, messageStr, photoCaption, photoTime, photoTags, photoFriend, myName;
 
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
@@ -90,6 +90,7 @@ function startApp() {
 function testAPI() {
   console.log('Welcome!  Fetching your information.... ');
   FB.api('/me', function(response) {
+    myName = response.name;
     console.log('Successful login for: ' + response.name);
     document.getElementById('status').innerHTML =
       'Welcome, ' + response.name + '!';
@@ -99,8 +100,9 @@ function testAPI() {
     top: '20px',
     right: '40px'
   });
-  $("#go-button").fadeIn(1000);
+  $("#go-button").fadeIn(800);
 }
+
 
 var albums, albumNumber, albumID;
 
@@ -120,18 +122,45 @@ function getAlbums(callback) {
   );
 }
 
-var photos, photoNumber,photoID;
+var photos, photoNumber, photoID;
 
 function getPhoto(ID) {
   console.log('Grabbing random photo');
   FB.api(
-    ID + '/photos?limit=99&fields=source',
+    ID + '/photos?limit=99&fields=source, name, created_time, tags',
     function(response) {
       if (response && !response.error) {
         photos = response.data;
         photoNumber = getRandomInt(0, photos.length);
         photoURL = photos[photoNumber].source;
+        console.log(photoURL);
         photoID = photos[photoNumber].id;
+        photoCaption = photos[photoNumber].name;
+        if (typeof photoCaption === 'undefined') {
+          photoCaption = 'Your memory from the past!';
+        };
+        photoTime = photos[photoNumber].created_time;
+        photoTags = photos[photoNumber].tags;
+        if (typeof photoTags !== 'undefined') {
+          if (photoTags.data.length == 1 && photoTags.data[0] == myName) {
+            console.log('just me!');
+            startApp();
+          } else {
+            photoFriend = '';
+            for (var i = 0; i < photoTags.data.length; i++) {
+              if (photoTags.data[i].name != myName) {
+                photoFriend += photoTags.data[i].name + ', ';
+              }
+            };
+            console.log(photoFriend);
+          }
+        }
+        else {
+          console.log('no tags');
+          startApp();
+        }
+        $('.cover-heading').html(photoCaption);
+        $('#main-text').html('');
         init();
       }
     }

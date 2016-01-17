@@ -10,7 +10,7 @@
   opacity:0.8;
 }
 
-p{
+p, .cover-heading{
   padding-left:25px;
   padding-right:25px;
 }
