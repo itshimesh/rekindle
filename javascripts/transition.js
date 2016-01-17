@@ -4,7 +4,7 @@ $("#go-button").click(function(){
 
 	loading_screen = window.pleaseWait({
 		logo: "img/rekindle.png",
-		backgroundColor: '#f46d3b',
+		backgroundColor: '#006699',
 		loadingHtml: "<div class='spinner'><div class='cube1'></div><div class='cube2'></div></div>"
 	});
 
@@ -20,7 +20,7 @@ $("#again").click(function(){
 
 	loading_screen = window.pleaseWait({
 		logo: "img/rekindle.png",
-		backgroundColor: '#f46d3b',
+		backgroundColor: '#006699',
 		loadingHtml: "<div class='spinner'><div class='cube1'></div><div class='cube2'></div></div>"
 	});
 
