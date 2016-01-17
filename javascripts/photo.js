@@ -1,5 +1,6 @@
 'use strict';
 var photoURL, messageStr, photoCaption, photoTime, photoTags, photoFriend, myName;
+var photoFriendID = [];
 
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
@@ -150,6 +151,7 @@ function getPhoto(ID) {
             for (var i = 0; i < photoTags.data.length; i++) {
               if (photoTags.data[i].name != myName) {
                 photoFriend += photoTags.data[i].name + ', ';
+                photoFriendID[i] = photoTags.data[i].id;
               }
             };
             console.log(photoFriend);

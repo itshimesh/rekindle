@@ -226,5 +226,18 @@ function gameOver() {
 
   $(".cover-heading").text("Congratulations!")
   $("#main-text").text("You solved the puzzle. Reconnect with " + photoFriend);
-  $("#again,#reconnect").fadeIn();
+
+  var $sendMsg
+  console.log('game over, send msg');
+  $sendMsg = $('.reconnect .thebutton').clone();
+  $('.reconnect .thebutton').remove();
+  for (var i = 0; i < photoTags.data.length; i++) {
+    if (photoTags.data[i].name != myName) {
+      $sendMsg.html('Send a message to ' + photoTags.data[i].name);
+      $sendMsg.appendTo('.reconnect');
+      $sendMsg.attr("href", "http://www.facebook.com/" + photoFriendID[i]);
+    }
+  };
+
+  $("#again,.reconnect").fadeIn();
 }

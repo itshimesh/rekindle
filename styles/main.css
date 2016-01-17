@@ -2,7 +2,7 @@
 
               /*Hide the Second User Screen elements on page load*/
 
- #again, #reconnect, #go-button, #canvas {
+ #again, .reconnect, #go-button, #canvas {
 	display:none;
 }
 

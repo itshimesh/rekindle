@@ -14,38 +14,35 @@
 <body>
     <canvas id="canvas"></canvas>
     <div class="container-fluid">
-      <div id="parentbox" class="row">
-        <div class="col-md-6 childbox">
-            <img class="demo intro" src="img/demo.gif">
+        <div id="parentbox" class="row">
+            <div class="col-md-6 childbox">
+                <img class="demo intro" src="img/demo.gif">
+            </div>
+            <div class="col-md-6">
+                <div class="row text-center">
+                    <img class="mb-50" src="img/rekindle.png">
+                    <div id="welcome">
+                        <h1 class="cover-heading">Relive your Kodak Moments</h1>
+                        <p id="main-text" class="lead">A platform to help you reconnect with friends. Solve the puzzle to rediscover a random moment from your past! Then ReKindle with your tagged contacts!</p>
+                    </div>
+                    <br>
+                    <div id="logout-content">
+                        <div id="fb-root"></div>
+                        <div id="status"></div>
+                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true" data-scope="user_photos, user_posts" onlogin='checkLoginState();'></div>
+                    </div>
+                    <p class="lead intro" id="go-button">
+                        <a href="#" class="thebutton">Go find a friend!</a>
+                    </p>
+                    <p class="lead" id="again">
+                        <a href="#" class="thebutton">Rekindle Again!</a>
+                    </p>
+                    <p class="lead reconnect">
+                        <a target="_blank" href="#" class="thebutton">Send a Message</a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-          <div class="row text-center">
-              <img class="mb-50" src="img/rekindle.png">
-
-              <div id="welcome">
-                  <h1 class="cover-heading">Relive your Kodak Moments</h1>
-                  <p id="main-text" class="lead">A platform to help you reconnect with  friends. Solve the puzzle to rediscover a random moment from your past! Then ReKindle with your tagged contacts!</p>
-              </div>
-
-              <br>
-
-              <div id="logout-content">
-                  <div id="fb-root"></div>
-                  <div id="status"></div>
-                  <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true" data-scope="user_photos, user_posts" onlogin='checkLoginState();'></div>
-              </div>
-              <p class="lead intro" id="go-button">
-                  <a href="#" class="thebutton">Go find a friend!</a>
-              </p>
-               <p class="lead" id="again">
-                  <a href="#" class="thebutton">Rekindle Again!</a>
-              </p>
-               <p class="lead" id="reconnect">
-                  <a href="#" class="thebutton">Send a Message</a>
-              </p>
-          </div>
-        </div>
-      </div>
     </div>
     <!--Please Wait.js-->
     <script src="assets/please-wait/please-wait.min.js"></script>
