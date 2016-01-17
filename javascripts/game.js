@@ -24,8 +24,16 @@ function init(){
 }
 
 function onImage(e){
-    _pieceWidth = Math.floor(_img.width / PUZZLE_DIFFICULTY)
-    _pieceHeight = Math.floor(_img.height / PUZZLE_DIFFICULTY)
+    _maxWidth = $(document).width()*0.5;
+    console.log(_maxWidth);
+    _maxHeight = $(document).height()*0.5;
+    if (_img.width > _maxWidth) {
+        _pieceWidth = Math.floor(_maxWidth / PUZZLE_DIFFICULTY);
+    }
+    else {
+        _pieceWidth = Math.floor(_img.width / PUZZLE_DIFFICULTY);
+    }
+    _pieceHeight = Math.floor(_img.height / PUZZLE_DIFFICULTY);
     _puzzleWidth = _pieceWidth * PUZZLE_DIFFICULTY;
     _puzzleHeight = _pieceHeight * PUZZLE_DIFFICULTY;
     setCanvas();
@@ -96,13 +104,15 @@ function shuffleArray(o){
 }
 
 function onPuzzleClick(e){
-    if(e.layerX || e.layerX == 0){
-        _mouse.x = e.layerX - _canvas.offsetLeft;
-        _mouse.y = e.layerY - _canvas.offsetTop;
+    console.log();
+
+    if(e.screenX || e.screenX == 0){
+        _mouse.x = e.screenX - _canvas.offsetLeft;
+        _mouse.y = e.screenY - _canvas.offsetTop;
     }
-    else if(e.offsetX || e.offsetX == 0){
-        _mouse.x = e.offsetX - _canvas.offsetLeft;
-        _mouse.y = e.offsetY - _canvas.offsetTop;
+    else if(e.x || e.x == 0){
+        _mouse.x = e.x - _canvas.offsetLeft;
+        _mouse.y = e.y - _canvas.offsetTop;
     }
     _currentPiece = checkPieceClicked();
     if(_currentPiece != null){
@@ -133,13 +143,13 @@ function checkPieceClicked(){
 
 function updatePuzzle(e){
     _currentDropPiece = null;
-    if(e.layerX || e.layerX == 0){
-        _mouse.x = e.layerX - _canvas.offsetLeft;
-        _mouse.y = e.layerY - _canvas.offsetTop;
+    if(e.screenX || e.screenX == 0){
+        _mouse.x = e.screenX - _canvas.offsetLeft;
+        _mouse.y = e.screenY - _canvas.offsetTop;
     }
-    else if(e.offsetX || e.offsetX == 0){
-        _mouse.x = e.offsetX - _canvas.offsetLeft;
-        _mouse.y = e.offsetY - _canvas.offsetTop;
+    else if(e.x || e.x == 0){
+        _mouse.x = e.x - _canvas.offsetLeft;
+        _mouse.y = e.y - _canvas.offsetTop;
     }
     _stage.clearRect(0,0,_puzzleWidth,_puzzleHeight);
     var i;

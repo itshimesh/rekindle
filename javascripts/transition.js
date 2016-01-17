@@ -15,13 +15,11 @@ $("#go-button").click(function(){
 		logo: "img/rekindle.png",
 		backgroundColor: '#f46d3b',
 		loadingHtml: "<div class='spinner'><div class='cube1'></div><div class='cube2'></div></div>"
-	});  
+	});
 
 	setTimeout(function(){
-	},6000); 
-	loading_screen.finish();
-
-	$(".site-wrapper").fadeOut();
-	$("body").css("text-align", "initial");
+		loading_screen.finish();
+	},4000);
+	$('.intro').fadeOut();
 	$("#canvas").fadeIn();
 });

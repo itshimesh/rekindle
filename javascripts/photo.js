@@ -34,20 +34,6 @@ function statusChangeCallback(response) {
   }
 }
 
-// This function is called when someone finishes with the Login
-// Button.  See the onlogin handler attached to it in the sample
-// code below.
-
-// $('.fb-login-button').click(function(event) {
-//   console.log('before - login button clicked');
-//   FB.getLoginStatus(function(response) {
-//     console.log('login button clicked');
-//     statusChangeCallback(response);
-//   });
-// });
-
-
-
 window.fbAsyncInit = function() {
   FB.init({
     appId: '791190204336816',
@@ -113,7 +99,7 @@ function testAPI() {
     top: '20px',
     right: '40px'
   });
-  $("#go-button").fadeIn('slow');
+  $("#go-button").fadeIn(1000);
 }
 
 var albums, albumNumber, albumID;

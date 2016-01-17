@@ -5,6 +5,12 @@
  #go-button, #canvas {
 	display:none;
 }
+
+#canvas {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
               /*Loading Screen Styling*/
 
 .spinner {

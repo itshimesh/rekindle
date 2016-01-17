@@ -10,6 +10,10 @@
   opacity:0.8;
 }
 
+p{
+  padding-left:25px;
+  padding-right:25px;
+}
 
 html,
 body {
@@ -21,7 +25,13 @@ body {
   text-align: center;
 }
 
-.mb-75{
-  margin-bottom:100px;
-  margin-top:50px;
+.mb-50{
+  margin-bottom:25px;
+  margin-top:30px;
 }
+
+.demo {
+  width: 100%;
+}
+
+
