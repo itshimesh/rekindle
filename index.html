@@ -1,72 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Rekindle</title>
-  
-  <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-  <link href="assets/please-wait/please-wait.css" rel="stylesheet">
-
-	<link rel="stylesheet" href="styles/main.css">
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href="assets/please-wait/please-wait.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
- 
+
 <body>
-
-  <canvas id="canvas"></canvas>
-
-  <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Brand Name</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li id="logout-space"></li>
-                </ul>
-              </nav>
+    <canvas id="canvas"></canvas>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">Brand Name</h3>
+                    </div>
+                </div>
+                <div class="inner cover">
+                    <div id="welcome">
+                        <h1 class="cover-heading">Cover your page.</h1>
+                        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                    </div>
+                    <br>
+                    <div id="logout-content">
+                        <div id="fb-root"></div>
+                        <div id="status"></div>
+                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true" data-scope="user_photos, user_posts" onlogin='checkLoginState();'></div>
+                    </div>
+                    <p class="lead" id="go-button">
+                        <a href="#" class="btn btn-lg btn-default">Go find a friend!</a>
+                    </p>
+                </div>
             </div>
-          </div>
-
-          <div class="inner cover">
-            <div id="welcome">
-              <h1 class="cover-heading">Cover your page.</h1>
-              <p  class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            </div>
-
-            <br>
-
-            <div id="logout-content">
-              <div class="fb-login-button" data-max-rows="1" data-size="medium" data-auto-logout-link="true"></div>
-              <div id="status"></div>
-            </div>
-
-            <p class="lead" id ="go-button">
-              <a href="#" class="btn btn-lg btn-default">Go find a friend!</a>
-            </p>
-          </div>
-
         </div>
-     </div>
-  </div>
-
-  <!--Please Wait.js-->
-  <script src="assets/please-wait/please-wait.min.js"></script>
-  <!--Jquery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  
-  <script type="text/javascript" src="javascripts/game.js"></script>
-  <script type="text/javascript" src="javascripts/photo.js"></script>
-  <script type="text/javascript" src="javascripts/transition.js"></script> 
-
+    </div>
+    <!--Please Wait.js-->
+    <script src="assets/please-wait/please-wait.min.js"></script>
+    <!--Jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="javascripts/game.js"></script>
+    <script type="text/javascript" src="javascripts/photo.js"></script>
+    <script type="text/javascript" src="javascripts/transition.js"></script>
 </body>
 
 </html>
