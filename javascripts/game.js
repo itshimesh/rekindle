@@ -217,5 +217,8 @@ function gameOver(){
     document.onmousedown = null;
     document.onmousemove = null;
     document.onmouseup = null;
-    startApp();
+
+    $(".cover-heading").text("Congratulations!")
+    $("#main-text").text("You solved the puzzle. Reconnect with");
+    $("#again,#reconnect").fadeIn();
 }

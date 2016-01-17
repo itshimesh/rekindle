@@ -1,5 +1,5 @@
 'use strict';
-var photoURL;
+var photoURL, messageStr;
 
 function checkLoginState() {
   FB.getLoginStatus(function(response) {
@@ -72,7 +72,7 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-$("#go-button").click(function() {
+$("#go-button,#again").click(function() {
   startApp();
 });
 
@@ -120,7 +120,7 @@ function getAlbums(callback) {
   );
 }
 
-var photos, photoNumber;
+var photos, photoNumber,photoID;
 
 function getPhoto(ID) {
   console.log('Grabbing random photo');
@@ -131,7 +131,7 @@ function getPhoto(ID) {
         photos = response.data;
         photoNumber = getRandomInt(0, photos.length);
         photoURL = photos[photoNumber].source;
-        console.log(photoURL);
+        photoID = photos[photoNumber].id;
         init();
       }
     }
